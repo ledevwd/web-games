@@ -44,7 +44,6 @@ body, #home, #boxes, .box, .box-background, #headers, .item {
 
 #home {
     width: 355px;
-    display: none;
 }
 
 #home h1 {
@@ -234,7 +233,7 @@ body, #home, #boxes, .box, .box-background, #headers, .item {
     transform: translate(-50%, -50%);
     border-radius: 10px;
     text-align: center;
-    /* display: none; */
+    display: none;
 }
 
 #end-game span {
