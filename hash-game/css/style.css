@@ -301,7 +301,7 @@ body, #home, #boxes, .box, .box-background, #headers, .item {
     }
 
     #game {
-        transform: scale(0.7);
+        transform: scale(0.8);
     }
     
     #align-btns {
