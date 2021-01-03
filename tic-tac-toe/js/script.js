@@ -4,12 +4,15 @@ window.onload = () => {
     let btnNewGame = document.querySelector("#btn-new-game");
     let btnHistoric = document.querySelector("#btn-historic");
     let btnBack = document.querySelectorAll(".btn-back");
+    let btnAbout = document.querySelector("#btn-about");
 
     let home = document.querySelector("#home");
     let historic = document.querySelector("#historic");
+    let about = document.querySelector("#about");
     let list = document.querySelector("#list");
     let game = document.querySelector("#game");
     let endGame = document.querySelector("#end-game");
+    let whoWon = document.querySelector("#who-won");
 
     let boxBackground = document.querySelectorAll(".box-background");
     let currentPlayer = Math.floor(Math.random() * 2);
@@ -31,6 +34,10 @@ window.onload = () => {
     btnNewGame.onclick = () => {
         endGame.style.display = "none";
         game.style.display = "block";
+
+        for (let i = 0; i < boxBackground.length; i ++) {
+            boxBackground[i].textContent = "";
+        }
     };
 
     btnHistoric.onclick = () => {
@@ -41,7 +48,17 @@ window.onload = () => {
     btnBack[0].onclick = () => {
         historic.style.display = "none";
         home.style.display = "block";
-    }
+    };
+
+    btnBack[1].onclick = () => {
+        about.style.display = "none";
+        home.style.display = "block";
+    };
+
+    btnAbout.onclick = () => {
+        home.style.display = "none";
+        about.style.display = "block";
+    };
 
     if (playersList[currentPlayer] == "X") {
         str.textContent = "X";
@@ -55,6 +72,7 @@ window.onload = () => {
         boxBackground[i].onclick = () => {
             if (boxBackground[i].childElementCount == 0) {
                 let xo = document.createElement("div");
+                let xRef, oRef;
                 
                 if (str.textContent == "X") {
                     str.textContent = "O";
@@ -63,7 +81,7 @@ window.onload = () => {
 
                     xo.textContent = "X";
 
-                    xl = ".x";
+                    xl = ".x";                
                 }
 
                 else {
@@ -95,22 +113,35 @@ window.onload = () => {
                     ||
                     boxBackground[2].querySelector(xl) && boxBackground[4].querySelector(xl) && boxBackground[6].querySelector(xl)
                     ) {
-                        setTimeout(function() {
-                            if (str.textContent == "X") {
-                                finish("O");
-                            }
-            
-                            else {
-                                finish("X");
-                            }
-                        }, 500);
+                        if (str.textContent == "X") {
+                            finish("O");
+                        }
+        
+                        else {
+                            finish("X");
+                        }
+                }
+
+                else {
+                    xRef = document.querySelectorAll(".x");
+                    oRef = document.querySelectorAll(".o");
+    
+                    if (
+                        playersList[currentPlayer] == "X" && xRef.length == 5 && oRef.length == 4
+                        ||
+                        playersList[currentPlayer] == "O" && oRef.length == 5 && xRef.length == 4
+                        ) {
+                        game.style.display = "none";
+                        endGame.style.display = "block";
+                        whoWon.textContent = "EMPATE";
+                        whoWon.style.fontSize = "3rem";
+                    }
                 }
             }
         };
     }
 
     function finish(winner) {
-        let whoWon = document.querySelector("#who-won");
         let date = new Date();
         let year = date.getFullYear();
         let month = date.getMonth();
@@ -125,6 +156,7 @@ window.onload = () => {
         game.style.display = "none";
         endGame.style.display = "block";
         whoWon.textContent = winner;
+        whoWon.style.fontSize = "7rem";
 
         createHistory();
 
@@ -146,7 +178,7 @@ window.onload = () => {
             }
 
             if (month < 10) {
-                month = "0" + month;
+                month = "0" + (month + 1);
             }
 
             if (day < 10) {
