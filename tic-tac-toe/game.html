@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content='O jogo da velha é um jogo clássico que consiste em agrupar "X" ou "O" na horizontal, vertical ou diagonal para vencer, caso contrário deu "velha".'>
+    <meta name="author" content="leandro do nascimento">
+    <title>Jogo da velha</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon32.png" sizes="32x32">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon16.png" sizes="16x16">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="home">
+        <h1>Jogo da velha</h1>
+        <small class="small">Desenvolvido <wbr>por:<wbr> <a href="https://github.com/ledevwd" target="_blank"><strong>leandro do nascimento</strong></a></small>
+        <div id="main-btns">
+            <button id="btn-start-game">Iniciar jogo</button>
+            <button id="btn-historic">Histórico</button>
+            <button id="btn-about">Sobre</button>
+        </div>
+        <small class="small">Versão: <strong>1.0</strong></small>
+    </div>
+    <div id="game">
+        <div id="turn">Vez do Jogador: <span id="str"></span></div>
+        <div id="boxes">
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-background">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="end-game">
+        <span>Vencedor</span> <span id="who-won"></span>
+        <div id="align-btns">
+            <button id="btn-home">Inicio</button>
+            <button id="btn-new-game">Novo Jogo</button>
+        </div>
+    </div>
+    <div id="historic">
+        <h1>Histórico</h1>
+        <div id="history-list">
+            <div id="headers">
+                <div class="list-header">Partida</div>
+                <div class="list-header">Data</div>
+            </div>
+            <div id="list">
+            </div>
+        </div>
+        <button class="btn-back">Voltar</button>
+    </div>
+    <div id="about">
+        <h1>Sobre</h1>
+        <section>
+            <h2>Como se joga?</h2>
+            <p class="section-txt">
+                O jogo da velha (<em>Tic Tac Toe</em>) é um jogo clássico e bem simples em que dois jogadores
+                jogam e quem formar primeiro uma linha com três símbolos iguais que são geralmente
+                representados por "X" e "O", seja ela na horizontal, vertical ou diagonal, acaba
+                ganhando o jogo. No brasil quando o jogo acaba tendo um empate, costuma-se dizer que
+                o jogo "deu velha".
+            </p>
+            <p class="section-txt">
+                Se ambos os jogadores jogarem sempre de maneira a atacar e defender sempre resultará em empate.
+                O jogador pode ganhar (caso ocorra algum erro do adversário) ou empatar seguindo as seguintes
+                regras sequenciais:
+            </p>
+            <p class="section-txt"><strong>Ataque</strong></p>
+            <ol class="section-txt">
+                <li>Em uma linha, se existir dois símbolos, coloque o terceiro.</li>
+                <li>Crie jogadas em que você possa ganhar de duas maneiras.</li>
+            </ol>
+            <p class="section-txt"><strong>Defesa</strong></p>
+            <ol class="section-txt">
+                <li>Se o adversário possuir dois símbolos, coloque o terceiro.</li>
+                <li>Bloqueie as jogadas em que o adversário possa ganhar de duas maneiras.</li>
+            </ol>
+            <hr>
+            <h2>Desenvolvimento do jogo</h2>
+            <p class="section-txt">
+                Este projeto foi elaborado e produzido por <a href="">leandro do nascimento</a> um desenvolvedor
+                e design e teve como iniciativa de colocar em prática conhecimentos próprios nas horas vagas
+                e para fins educacionais para terceiros. Este projeto foi iniciado o seu desenvolvimento na data
+                <em>25/12/2020</em> e terminado suas funções simples em <em>02/01/2021</em> e subsequente
+                relativamente a esta data possui algumas atualizações finais limitadas no qual tende a
+                melhorar o design, funcionalidades e layout em diferentes navegadores e dispositivos tornando o mesmo
+                <em>Cross-browser</em>.
+            </p>
+        </section>
+        <button class="btn-back">Voltar</button>
+    </div>
+</body>
+</html>
