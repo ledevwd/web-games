@@ -221,7 +221,7 @@ section {
     padding: 40px;
     margin: auto;
     color: var(--dark-gray);
-    overflow: hidden auto;
+    overflow-y: auto;
 }
 
 section a {
@@ -364,15 +364,15 @@ hr {
     #list {
         height: 250px;
     }
+
+    section {
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 630px), screen and (max-height: 630px) {
     #end-game {
         width: calc(100% - 30px);
-    }
-
-    section {
-        height: 250px;
     }
 }
 
@@ -396,6 +396,10 @@ hr {
     #list {
         height: 180px;
     }
+
+    section {
+        height: 200px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -411,10 +415,6 @@ hr {
 @media screen and (max-height: 475px) {
     #list {
         height: 81px;
-    }
-
-    #about {
-        transform: scale(0.8) translateY(-60px);
     }
 }
 
@@ -496,11 +496,6 @@ hr {
 @media screen and (max-width: 326px) {
     #main-btns button, #btn-home, #btn-new-game, .btn-back {
         height: 45px;
-    }
-
-    section {
-        margin: 20px;
-        padding: 20px;
     }
 }
 
