@@ -125,12 +125,19 @@ window.onload = () => {
                 else {
                     xRef = document.querySelectorAll(".x");
                     oRef = document.querySelectorAll(".o");
+
+                    console.log("X: " + xRef.length + ", " + "O: " + oRef.length);
     
                     if (
                         playersList[currentPlayer] == "X" && xRef.length == 5 && oRef.length == 4
                         ||
+                        playersList[currentPlayer] == "X" && xRef.length == 4 && oRef.length == 5
+                        ||
+                        playersList[currentPlayer] == "O" && oRef.length == 4 && xRef.length == 5
+                        ||
                         playersList[currentPlayer] == "O" && oRef.length == 5 && xRef.length == 4
                         ) {
+                        
                         game.style.display = "none";
                         endGame.style.display = "block";
                         whoWon.textContent = "EMPATE";
