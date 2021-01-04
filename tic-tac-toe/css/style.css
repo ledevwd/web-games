@@ -21,6 +21,7 @@
 :root {
     --dark-orange: #ee6939;
     --dark-blue: #2a5ebe;
+    --dark-blue-opacity: #2a5ebe86;
     --dark-blue2: #5281d6;
     --dark-gray: #525252;
     --light-orange: #f3a94e;
@@ -329,6 +330,45 @@ hr {
 
 .x {
     color: var(--x);
+}
+
+#game-mode-block {
+    background: var(--dark-blue-opacity);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#game-mode {
+    background: #fff;
+    font-family: Roboto-Light;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 10px var(--dark-blue);
+}
+
+summary {
+    display: block;
+    padding: 10px;
+    outline: none;
+    color: var(--dark-orange);
+    font-family: Roboto-Black;
+}
+
+#machine, #friend {
+    padding: 10px;
+}
+
+#machine:hover, #friend:hover {
+    background: #e0e0e0;
 }
 
 #end-game {
